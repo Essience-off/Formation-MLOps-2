@@ -27,4 +27,4 @@ jobs:
         run: python -m pytest tests/test_unit
       # Add behave command
       - name: Behave test
-        run:  behave tests/test_functional/features/
+        run:  python -m behave tests/test_functional/features/
