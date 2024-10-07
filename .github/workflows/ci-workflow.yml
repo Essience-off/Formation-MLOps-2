@@ -17,13 +17,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install -r requirements_test.txt
       - name: Install dev dependencies
         run:  pip install -r requirements_test.txt
       - name: Run Linter
-        run:  "Trainee should add command to run flake8"
+        run:  flake8 formation_indus_ds_avancee
       - name: Run Vulture
-        run:  "Trainee should add command to run vulture"
+        run:  vulture formation_indus_ds_avancee scripts --min-confindence 100
       - name: Run tests
-        run:  "Trainee should add command to run test"
-
-
+        run:  python -m pytest tests/test_unit/
