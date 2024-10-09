@@ -50,5 +50,5 @@ def predict_endpoint():
     print(pred)
     #raise NotImplementedError
     return jsonify({
-        "pred": pred.to_dict(),
+        pred["predictions"].to_json(),
     })
